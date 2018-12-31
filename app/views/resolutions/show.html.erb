@@ -1,0 +1,16 @@
+<h1><%= @resolution.title %></h1>
+<ul>
+  <li>Description: <%= @resolution.description %></li>
+  <li>End Date: <%= @resolution.end_date %> </li>
+  <li>Complete?: <%= humanize(@resolution.done) %> </li>
+  <li>❤️ Count: <%= @resolution.hearts.count %> </li>
+  <li>Tags: <% @resolution.tags.each do |tag| %>
+    <ul>
+      <li><%= link_to tag.name, tag %></li>
+    </ul>
+  </li>
+  <% end %>
+</ul>
+  <%= button_to "Edit Resolution?", edit_resolution_path, method: "get" %>
+  <%= button_to "Delete Resolution?", resolution_path(@resolution),
+                                  method: :delete, data: { confirm: "Are you sure?" } %>

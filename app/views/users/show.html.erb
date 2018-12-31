@@ -1,0 +1,6 @@
+<h1><%= @user.username %>'s Profile Page</h1>
+
+<ul>
+  <li>Your Hearts: <%= @user.hearts.count %> </li>
+  <li>Your Resolutions: <% @user.resolutions.each do |resolution| %> <%= resolution.title %> <% end %> </li>
+</ul>

@@ -1,0 +1,7 @@
+<h1> Here are all the resolutions for Tag: <br> <%= @tag.name %></h1>
+<ul>
+  <% @tag.resolutions.each do |resolution| %>
+  <li><%= link_to resolution.title, resolution %>
+  </li>
+</ul>
+<% end %>

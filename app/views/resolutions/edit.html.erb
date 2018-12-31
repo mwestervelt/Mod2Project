@@ -1,0 +1,21 @@
+<h1>Edit Resolution: <%= @resolution.title %></h1>
+<%= form_for @resolution do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %><br>
+  <%= f.label :description %><br>
+  <%= f.text_area :description %> <br>
+  <%= f.label :end_date %>
+  <%= f.date_select :end_date %> <br>
+  <%= f.label "Done?" %>
+  <%= f.check_box :done %> <br>
+  <%= f.submit "Edit" %>
+  <% end %>
+  <ul>
+  <li>❤️'s: <%= @resolution.hearts.count %> </li>
+  <li>Tags: <% @resolution.tags.each do |tag| %>
+    <ul>
+      <li><%= link_to tag.name, tag %></li>
+    </ul>
+  </li>
+  <% end %>
+</ul>

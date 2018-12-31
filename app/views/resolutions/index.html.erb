@@ -1,0 +1,10 @@
+<h1>Resolutions:</h1>
+
+<ul> <% @resolutions.each do |resolution| %>
+  <li>
+  <%= link_to resolution.title, resolution %> <% num = resolution.hearts.count do |heart|%>
+    <%= p "❤️ "%>
+    <% end %></li>
+  <% end %>
+
+</ul>
